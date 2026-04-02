@@ -1,0 +1,15 @@
+.footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: 0.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+.footer i {
+  color: var(--text-tertiary);
+}

@@ -1,0 +1,45 @@
+.history-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th {
+  text-align: left;
+  padding: 14px;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.history-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #0f172a;
+}
+
+.history-table tr:last-child td {
+  border-bottom: none;
+}
+
+.cost {
+  font-weight: 500;
+}
+
+.status {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status.completed {
+  background: #dcfce7;
+  color: #15803d;
+}

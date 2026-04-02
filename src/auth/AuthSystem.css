@@ -1,0 +1,63 @@
+.auth-system-standalone {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #f0f7f9 0%, #e2edf3 100%); /* Fond dégradé doux */
+  padding: 20px;
+}
+
+/* Style du Logo et Titre en haut */
+.auth-header-external {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-logo-box {
+  background-color: #2E8B7F;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  box-shadow: 0 4px 12px rgba(46, 139, 127, 0.2);
+}
+
+.auth-main-title {
+  color: #1a3352;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.auth-main-subtitle {
+  color: #94a3b8;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* La Carte Blanche */
+.auth-card-container {
+  background: white;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+/* Copyright en bas */
+.auth-footer-copyright {
+  margin-top: 40px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* Masquer les onglets de navigation s'ils existent encore dans le CSS */
+.auth-nav {
+    display: none;
+}

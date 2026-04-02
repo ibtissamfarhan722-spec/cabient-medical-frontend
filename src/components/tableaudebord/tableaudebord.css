@@ -1,0 +1,335 @@
+.dashboard-card {
+  background-color: #2e8b7f;
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dashboard-subtitle {
+  color: #d1d5db; /* gray-300 */
+  font-size: 14px;
+}
+
+.highlight {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.dashboard-stats {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.stat-box {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #e5e7eb; /* gray-200 */
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.card-container-bar {
+  background-color: #ffffff;
+  width: 100%;
+  border-radius: 1rem; /* arrondi comme rounded-xl */
+  padding: 1.25rem 1.75rem; /* py-5 px-7 */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.card-header-bar {
+  margin-bottom: 1.25rem; /* mb-5 */
+}
+
+.card-title-bar {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  margin: 0;
+}
+
+.card-subtitle-bar {
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280; /* gray-500 */
+  margin: 0;
+}
+
+.cards-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 0.75rem; /* équivalent de gap-3 */
+  margin: 1.25rem 0; /* équivalent de my-5 */
+}
+
+/* Container principal */
+.rdv-item {
+  display: flex;
+  flex-direction: column; /* flex-col par défaut */
+  align-items: center;
+  border-top: 2px solid #f9fafb; /* border-t-2 border-gray-50 */
+  transition: background-color 0.3s;
+}
+
+.rdv-item:hover {
+  background-color: #f9fafb; /* hover:bg-gray-50 */
+}
+
+@media (min-width: 768px) {
+  .rdv-item {
+    flex-direction: row; /* md:flex-row */
+    gap: 1rem; /* md:gap-4 */
+  }
+}
+
+/* Avatar circulaire */
+.rdv-avatar {
+  width: 2.25rem; /* w-9 */
+  height: 2.25rem; /* h-9 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px; /* rounded-full */
+  background-color: rgba(43, 128, 116, 0.1);
+  color: #2b8074;
+  font-weight: 600; /* font-semibold */
+  flex-shrink: 0;
+}
+
+/* Conteneur du texte */
+.rdv-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* flex-col par défaut */
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .rdv-content {
+    flex-direction: row; /* md:flex-row */
+    align-items: center;
+    text-align: left; /* md:text-start */
+  }
+}
+
+/* Info principale (nom et type/medecin) */
+.rdv-info h5 {
+  font-weight: 600; /* font-semibold */
+  margin: 0;
+}
+
+.rdv-info p {
+  font-size: 0.875rem; /* text-sm */
+  color: #9ca3af; /* text-gray-400 */
+  margin: 0;
+}
+
+/* Conteneur horaires et état */
+.rdv-meta {
+  display: flex;
+  flex-direction: column; /* flex-col par défaut */
+  gap: 0.5rem; /* gap-2 */
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .rdv-meta {
+    flex-direction: row; /* md:flex-row */
+    gap: 1rem; /* md:gap-4 */
+  }
+}
+
+.rdv-section {
+  background-color: #ffffff;
+  border-radius: 0.75rem; /* arrondi global */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* léger shadow */
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Header */
+.rdv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.rdv-header-title h3 {
+  font-size: 1.125rem; /* text-xl */
+  font-weight: 600;
+  margin: 0;
+}
+
+.rdv-header-title p {
+  font-size: 0.875rem;
+  color: #9ca3af; /* gris clair */
+  margin: 0;
+}
+
+.rdv-header-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #1f7a6b;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.rdv-header-link:hover {
+  border-bottom-color: #2b8074;
+}
+
+.rdv-header-link .icon {
+  font-size: 0.875rem;
+}
+
+/* Container des cards */
+.rdv-cards-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card RDV */
+.rdv-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #f3f4f6;
+  transition: background-color 0.3s;
+}
+
+.rdv-item:hover {
+  background-color: #f9fafb;
+}
+
+/* Avatar */
+.rdv-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #e6f5f2; /* vert clair par défaut */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: #2b8074;
+  flex-shrink: 0;
+}
+
+/* Info principale */
+.rdv-info {
+  margin-left: 0.75rem;
+}
+
+.rdv-info h5 {
+  font-weight: 600;
+  margin: 0;
+}
+
+.rdv-info p {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Heure et état */
+.rdv-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rdv-time {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.rdv-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* États spécifiques */
+.rdv-status.confirmé {
+  background-color: #3db3a328;
+  color: #2b8074; /* vert */
+}
+
+.rdv-status.en-attente {
+  background-color: #ffedbeee;
+  color: #ad8110; /* orange */
+}
+
+.rdv-status.terminé {
+  background-color: #e6f0ff;
+  color: #3070d6; /* bleu */
+}
+
+.rdv-status.annulé {
+  background-color: #fceaea;
+  color: #e03a3a; /* rouge */
+}
+
+.dashboard-container {
+  width: 100%; /* w-3/4 */
+  margin: 0 auto; /* centrer horizontalement */
+  box-sizing: border-box;
+  padding: 1rem 0; /* optionnel, pour espacement vertical */
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    width: 80%;
+  }
+}

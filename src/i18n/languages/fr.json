@@ -1,0 +1,18 @@
+{
+  "SideBar": {
+    "dashboard": "Tableau de bord",
+    "clients": "Clients",
+    "vehicles": "Véhicules",
+    "receptions": "Réceptions",
+    "diagnostics": "Diagnostics",
+    "quotes": "Devis",
+    "OR": "Ordres de Réparation",
+    "tasks": "Tâches",
+    "invoices": "Factures",
+    "settings": "Paramètres",
+    "logout": "Déconnexion"
+  },
+  "Footer": {
+    "copyright": "GarageFlow. Tous droits réservés."
+  }
+}

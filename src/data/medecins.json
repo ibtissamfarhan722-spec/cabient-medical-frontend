@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "nom": "Dr. Marie Dupont",
+    "specialites": ["Médecine générale", "Pédiatrie"],
+    "ville": "Paris",
+    "photo": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop&crop=face",
+    "description": "Médecin généraliste expérimentée avec plus de 15 ans d'expérience. Spécialisée en pédiatrie.",
+    "horaires": [
+      "Lundi: 9h-12h, 14h-18h",
+      "Mardi: 9h-12h, 14h-18h",
+      "Mercredi: 9h-12h",
+      "Jeudi: 9h-12h, 14h-18h",
+      "Vendredi: 9h-12h, 14h-17h"
+    ],
+    "disponibilites": [
+      { "date": "2024-04-01", "heures": ["10:00", "11:00", "15:00"] },
+      { "date": "2024-04-02", "heures": ["09:00", "14:00", "16:00"] },
+      { "date": "2024-04-03", "heures": ["10:30", "15:30"] }
+    ]
+  },
+  {
+    "id": 2,
+    "nom": "Dr. Jean Martin",
+    "specialites": ["Cardiologie"],
+    "ville": "Lyon",
+    "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=300&fit=crop&crop=face",
+    "description": "Cardiologue spécialisé dans les maladies cardiovasculaires. Formation à l'hôpital Saint-Luc.",
+    "horaires": [
+      "Lundi: 8h-12h, 13h-17h",
+      "Mardi: 8h-12h, 13h-17h",
+      "Mercredi: 8h-12h",
+      "Jeudi: 8h-12h, 13h-17h",
+      "Vendredi: 8h-12h, 13h-16h"
+    ],
+    "disponibilites": [
+      { "date": "2024-04-01", "heures": ["09:00", "14:30"] },
+      { "date": "2024-04-02", "heures": ["10:00", "15:00", "16:30"] },
+      { "date": "2024-04-04", "heures": ["11:00", "14:00"] }
+    ]
+  },
+  {
+    "id": 3,
+    "nom": "Dr. Sophie Laurent",
+    "specialites": ["Dermatologie", "Médecine esthétique"],
+    "ville": "Marseille",
+    "photo": "https://images.unsplash.com/photo-1594824804732-ca8db723f8fa?w=300&h=300&fit=crop&crop=face",
+    "description": "Dermatologue spécialisée en médecine esthétique. Consultations pour tous types de peau.",
+    "horaires": [
+      "Lundi: 9h-13h",
+      "Mardi: 9h-13h",
+      "Mercredi: 9h-13h",
+      "Jeudi: 9h-13h",
+      "Vendredi: 9h-13h"
+    ],
+    "disponibilites": [
+      { "date": "2024-04-01", "heures": ["10:00", "11:30", "15:00"] },
+      { "date": "2024-04-03", "heures": ["09:30", "14:00", "16:00"] },
+      { "date": "2024-04-05", "heures": ["10:30", "15:30"] }
+    ]
+  },
+  {
+    "id": 4,
+    "nom": "Dr. Pierre Dubois",
+    "specialites": ["Ophtalmologie"],
+    "ville": "Toulouse",
+    "photo": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&h=300&fit=crop&crop=face",
+    "description": "Ophtalmologiste spécialisé dans les pathologies de l'œil et la chirurgie réfractive.",
+    "horaires": [
+      "Lundi: 8h30-12h, 14h-17h30",
+      "Mardi: 8h30-12h, 14h-17h30",
+      "Mercredi: 8h30-12h",
+      "Jeudi: 8h30-12h, 14h-17h30",
+      "Vendredi: 8h30-12h, 14h-16h30"
+    ],
+    "disponibilites": [
+      { "date": "2024-04-02", "heures": ["09:00", "14:30", "16:00"] },
+      { "date": "2024-04-04", "heures": ["10:00", "15:00"] },
+      { "date": "2024-04-06", "heures": ["11:00", "14:00", "16:30"] }
+    ]
+  },
+  {
+    "id": 5,
+    "nom": "Dr. Isabelle Moreau",
+    "specialites": ["Gynécologie", "Obstétrique"],
+    "ville": "Nice",
+    "photo": "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=300&h=300&fit=crop&crop=face",
+    "description": "Gynécologue-obstétricienne avec expertise en suivi de grossesse et santé féminine.",
+    "horaires": [
+      "Lundi: 9h-12h30, 14h-18h",
+      "Mardi: 9h-12h30, 14h-18h",
+      "Mercredi: 9h-12h30",
+      "Jeudi: 9h-12h30, 14h-18h",
+      "Vendredi: 9h-12h30, 14h-17h30"
+    ],
+    "disponibilites": [
+      { "date": "2024-04-01", "heures": ["10:30", "15:00"] },
+      { "date": "2024-04-03", "heures": ["09:00", "14:00", "16:30"] },
+      { "date": "2024-04-05", "heures": ["11:00", "15:30"] }
+    ]
+  }
+]

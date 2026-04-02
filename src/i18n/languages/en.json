@@ -1,0 +1,21 @@
+{
+    "Header":{
+
+    },
+    "SideBar":{
+        "dashboard":"Dashboard",
+        "clients":"Clients",
+        "vehicles":"Vehicles",
+        "receptions":"Receptions",
+        "diagnostics":"Diagnostics",
+        "quotes":"Quotes",
+        "OR":"Repair Orders",
+        "tasks":"Tasks",
+        "invoices":"Invoices",
+        "settings":"Settings",
+        "logout":"Logout"
+    },
+    "Footer":{
+        "copyright":"GarageFlow. All rights reserved."
+    }
+}

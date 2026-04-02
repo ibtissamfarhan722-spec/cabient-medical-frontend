@@ -1,0 +1,151 @@
+.Vehicule {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+thead {
+    background-color: #f8f9fa;
+}
+
+th {
+    padding: 16px 20px;
+    text-align: left;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 14px;
+    border-bottom: 2px solid #e0e0e0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+i:hover{
+    cursor: pointer;
+}
+td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+    font-size: 14px;
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Special cell styling */
+.immatriculation-cell {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.kilometrage-cell {
+    font-weight: 500;
+    color: #666;
+}
+
+/* Actions cell styling */
+.actions-cell {
+    display: flex;
+    gap: 10px;
+    border-bottom: none;
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: white;
+}
+
+.view-btn {
+    background-color: #6c757d;
+}
+
+.view-btn:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+
+.edit-btn {
+    background-color: #d4a373;
+}
+
+.edit-btn:hover {
+    background-color: #c19462;
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* No data message */
+.no-data {
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .Vehicule {
+        padding: 15px;
+    }
+    
+    th, td {
+        padding: 12px 15px;
+    }
+    
+    .actions-cell {
+        gap: 8px;
+    }
+    
+    .action-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+}
+
+/* Add this to your main index.css or App.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');

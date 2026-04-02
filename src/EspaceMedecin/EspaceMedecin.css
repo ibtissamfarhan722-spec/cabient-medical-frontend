@@ -1,0 +1,57 @@
+:root {
+  --sb-width: 280px;
+  --sb-collapsed: 85px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.layout-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f3f7f6;
+}
+
+/* La Sidebar */
+.sidebar {
+  width: var(--sb-width);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: white;
+  border-right: 1px solid #f1f5f9;
+  z-index: 1000;
+  transition: width var(--transition);
+}
+
+/* Quand on réduit la sidebar */
+.layout-wrapper.sidebar-is-small .sidebar {
+  width: var(--sb-collapsed);
+}
+
+/* LE CONTENEUR DE DROITE (L'astuce est ici) */
+.main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  /* La marge s'adapte à la sidebar */
+  margin-left: var(--sb-width); 
+  transition: margin-left var(--transition);
+}
+
+/* Changement de marge quand réduit */
+.layout-wrapper.sidebar-is-small .main-container {
+  margin-left: var(--sb-collapsed);
+}
+
+.page-content {
+  padding: 5px;
+  width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+  .main-container { margin-left: 0 !important; }
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.active { transform: translateX(0); width: var(--sb-width); }
+}

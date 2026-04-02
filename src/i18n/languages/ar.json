@@ -1,0 +1,18 @@
+{
+  "SideBar": {
+    "dashboard": "لوحة التحكم",
+    "clients": "العملاء",
+    "vehicles": "المركبات",
+    "receptions": "الاستقبالات",
+    "diagnostics": "التشخيصات",
+    "quotes": "عروض الأسعار",
+    "OR": "أوامر الإصلاح",
+    "tasks": "المهام",
+    "invoices": "الفواتير",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج"
+  },
+  "Footer": {
+    "copyright": "جميع الحقوق محفوظة لـ GarageFlow."
+  }
+}

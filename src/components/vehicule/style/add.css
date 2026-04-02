@@ -1,0 +1,225 @@
+/* PAGE */
+.add-page {
+  background: #f6f7f9;
+  min-height: 100vh;
+  padding: 36px 48px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* FORM WIDTH */
+.add-form {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* TOP THIN LINE (IMAGE HAS IT) */
+.page-divider {
+  height: 2px;
+  width: 100%;
+  background: #e5e7eb;
+  margin-bottom: 28px;
+}
+
+/* TWO CARDS ROW */
+.cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+/* CARD */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 32px;
+  border: 1px solid #e6e8ec;
+}
+
+/* CARD TITLE */
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 26px;
+}
+
+/* INPUT GROUP */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #6b7280;
+  margin-right: 100px;
+  margin-bottom: 8px;
+  display: block;
+  width: 100%;
+}
+.form-alert {
+  background: #fdecea;
+  color: #b71c1c;
+  border: 1px solid #f5c2c7;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.input-error {
+  border: 2px solid #e53935 !important;
+  background: #fff5f5;
+}
+
+
+/* INPUT - Applying your styles: borderRadius: "15px", width: "300px" */
+.input-group input {
+  height: 48px;
+  width: 300px;
+  border-radius: 15px;
+  padding: 0 16px;
+  border: 1px solid #e5e7eb;
+  font-size: 15px;
+  color: #111827;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+  color: #9ca3af;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #d6b38c;
+  box-shadow: 0 0 0 3px rgba(214, 179, 140, 0.25);
+}
+
+/* FOOTER */
+.form-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+/* CANCEL BUTTON */
+.btn-cancel {
+  height: 46px;
+  padding: 0 28px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+}
+
+/* SUBMIT BUTTON */
+.btn-submit {
+  height: 46px;
+  padding: 0 30px;
+  border-radius: 10px;
+  border: none;
+  background: #d6b38c;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-submit:hover{
+  background-color: #b0640dd7;
+}
+
+.btn-submit .plus {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .cards-row {
+    grid-template-columns: 1fr;
+  }
+
+  .add-page {
+    padding: 24px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .add-page {
+    padding: 20px;
+  }
+  
+  .card {
+    padding: 24px;
+  }
+  
+  /* Make inputs responsive on tablet */
+  .input-group input {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .form-footer {
+    flex-direction: column;
+  }
+  
+  .btn-cancel,
+  .btn-submit {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .add-page {
+    padding: 16px;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+  
+  .btn-cancel,
+  .btn-submit {
+    height: 44px;
+    font-size: 13px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+  .add-page {
+    padding: 12px;
+  }
+  
+  .card {
+    padding: 16px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
