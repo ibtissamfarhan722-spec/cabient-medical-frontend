@@ -1,52 +1,265 @@
-import React, { useState, useEffect } from 'react';
-import MedecinCard from '../components/MedecinCard';
-import Filtre from '../components/Filtre';
-import medecinsData from '../data/medecins.json';
+import React, { useState } from 'react';
+import { Search, Stethoscope, Video, Home, Building } from 'lucide-react';
 
 const Home = () => {
-  const [medecins, setMedecins] = useState([]);
-  const [filteredMedecins, setFilteredMedecins] = useState([]);
-  const [filters, setFilters] = useState({
-    search: '',
-    ville: '',
-    typeConsultation: ''
-  });
+  const [activeTab, setActiveTab] = useState('cabinet');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCity, setSelectedCity] = useState('');
 
-  useEffect(() => {
-    setMedecins(medecinsData);
-    setFilteredMedecins(medecinsData);
-  }, []);
+  const tabs = [
+    { id: 'cabinet', label: 'Au Cabinet', icon: Home },
+    { id: 'video', label: 'En Vidéo', icon: Video },
+    { id: 'domicile', label: 'A Domicile', icon: Home },
+    { id: 'clinique', label: 'À La Clinique', icon: Building, badge: 'Nouveau' }
+  ];
 
-  useEffect(() => {
-    let filtered = medecins;
+  const cities = ['Paris', 'Lyon', 'Marseille', 'Toulouse', 'Nice', 'Nantes'];
 
-    // Filtre par recherche (nom, spécialité)
-    if (filters.search) {
-      filtered = filtered.filter(medecin =>
-        medecin.nom.toLowerCase().includes(filters.search.toLowerCase()) ||
-        medecin.specialites.some(spec =>
-          spec.toLowerCase().includes(filters.search.toLowerCase())
-        )
-      );
-    }
+  return (
+    <div style={{
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      minHeight: '100vh',
+      padding: '40px 20px',
+      fontFamily: 'Arial, sans-serif'
+    }}>
+      <div style={{
+        maxWidth: '900px',
+        margin: '0 auto'
+      }}>
+        {/* Hero Section */}
+        <div style={{
+          textAlign: 'center',
+          marginBottom: '50px',
+          animation: 'fadeIn 1s ease-in'
+        }}>
+          <h1 style={{
+            fontSize: '2.8rem',
+            fontWeight: 'bold',
+            color: 'white',
+            marginBottom: '30px',
+            lineHeight: '1.2'
+          }}>
+            Prenez rendez-vous avec votre médecin{' '}
+            <span style={{ color: '#FFD700' }}>au cabinet ou en vidéo</span>
+          </h1>
 
-    // Filtre par ville
-    if (filters.ville) {
-      filtered = filtered.filter(medecin => medecin.ville === filters.ville);
-    }
+          <div style={{
+            background: 'white',
+            borderRadius: '20px',
+            padding: '40px',
+            boxShadow: '0 15px 35px rgba(0,0,0,0.1)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '30px',
+            flexWrap: 'wrap',
+            justifyContent: 'center'
+          }}>
+            <div style={{ flex: '1', minWidth: '200px', textAlign: 'center' }}>
+              <Stethoscope size={120} color="#2E8B7F" />
+            </div>
+            <div style={{ flex: '2', minWidth: '250px' }}>
+              <h2 style={{
+                fontSize: '1.8rem',
+                marginBottom: '15px',
+                color: '#333'
+              }}>
+                Consultation en vidéo où que vous soyez
+              </h2>
+              <p style={{
+                color: '#666',
+                marginBottom: '20px',
+                fontSize: '1.1rem'
+              }}>
+                Consultez votre médecin depuis chez vous, en toute sécurité.
+              </p>
+              <button style={{
+                background: 'linear-gradient(45deg, #2E8B7F, #FFD700)',
+                color: 'white',
+                border: 'none',
+                padding: '15px 30px',
+                borderRadius: '25px',
+                fontSize: '1.1rem',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 15px rgba(46, 139, 127, 0.3)'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.transform = 'scale(1.05)';
+                e.target.style.boxShadow = '0 6px 20px rgba(46, 139, 127, 0.4)';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.transform = 'scale(1)';
+                e.target.style.boxShadow = '0 4px 15px rgba(46, 139, 127, 0.3)';
+              }}>
+                Prenez Rendez-vous
+              </button>
+            </div>
+          </div>
+        </div>
 
-    // Pour le type de consultation, on pourrait filtrer selon les disponibilités
-    // Ici on garde tous les médecins car tous peuvent proposer différents types
+        {/* Appointment Type Tabs */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '15px',
+          marginBottom: '40px',
+          flexWrap: 'wrap'
+        }}>
+          {tabs.map(tab => {
+            const Icon = tab.icon;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                style={{
+                  background: activeTab === tab.id ? 'white' : 'rgba(255,255,255,0.2)',
+                  color: activeTab === tab.id ? '#333' : 'white',
+                  border: 'none',
+                  padding: '12px 25px',
+                  borderRadius: '25px',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  fontSize: '1rem',
+                  fontWeight: '500',
+                  boxShadow: activeTab === tab.id ? '0 4px 15px rgba(0,0,0,0.1)' : 'none',
+                  position: 'relative'
+                }}
+                onMouseOver={(e) => {
+                  if (activeTab !== tab.id) {
+                    e.target.style.background = 'rgba(255,255,255,0.3)';
+                    e.target.style.transform = 'translateY(-2px)';
+                  }
+                }}
+                onMouseOut={(e) => {
+                  if (activeTab !== tab.id) {
+                    e.target.style.background = 'rgba(255,255,255,0.2)';
+                    e.target.style.transform = 'translateY(0)';
+                  }
+                }}
+              >
+                <Icon size={18} />
+                {tab.label}
+                {tab.badge && (
+                  <span style={{
+                    background: '#FFD700',
+                    color: '#333',
+                    padding: '2px 8px',
+                    borderRadius: '12px',
+                    fontSize: '0.75rem',
+                    fontWeight: 'bold',
+                    marginLeft: '5px'
+                  }}>
+                    {tab.badge}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
 
-    setFilteredMedecins(filtered);
-  }, [filters, medecins]);
+        {/* Search Section */}
+        <div style={{
+          background: 'white',
+          borderRadius: '20px',
+          padding: '40px',
+          boxShadow: '0 15px 35px rgba(0,0,0,0.1)',
+          animation: 'fadeIn 1s ease-in 0.5s both'
+        }}>
+          <div style={{
+            display: 'flex',
+            gap: '20px',
+            marginBottom: '30px',
+            flexWrap: 'wrap'
+          }}>
+            <input
+              type="text"
+              placeholder="Spécialité, médecin, établissement..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={{
+                flex: '1',
+                minWidth: '250px',
+                padding: '18px 20px',
+                borderRadius: '15px',
+                border: '2px solid #e0e0e0',
+                fontSize: '1.1rem',
+                outline: 'none',
+                transition: 'border-color 0.3s ease',
+                fontFamily: 'inherit'
+              }}
+              onFocus={(e) => e.target.style.borderColor = '#2E8B7F'}
+              onBlur={(e) => e.target.style.borderColor = '#e0e0e0'}
+            />
+            <select
+              value={selectedCity}
+              onChange={(e) => setSelectedCity(e.target.value)}
+              style={{
+                padding: '18px 20px',
+                borderRadius: '15px',
+                border: '2px solid #e0e0e0',
+                fontSize: '1.1rem',
+                outline: 'none',
+                transition: 'border-color 0.3s ease',
+                minWidth: '200px',
+                fontFamily: 'inherit',
+                background: 'white'
+              }}
+              onFocus={(e) => e.target.style.borderColor = '#2E8B7F'}
+              onBlur={(e) => e.target.style.borderColor = '#e0e0e0'}
+            >
+              <option value="">Choisir une ville</option>
+              {cities.map(city => (
+                <option key={city} value={city}>{city}</option>
+              ))}
+            </select>
+          </div>
 
-  const handleFilterChange = (key, value) => {
-    setFilters(prev => ({
-      ...prev,
-      [key]: value
-    }));
-  };
+          <button style={{
+            width: '100%',
+            background: 'linear-gradient(45deg, #FFA500, #FFD700)',
+            color: 'white',
+            border: 'none',
+            padding: '18px',
+            borderRadius: '15px',
+            fontSize: '1.3rem',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '10px',
+            boxShadow: '0 4px 15px rgba(255, 165, 0, 0.3)'
+          }}
+          onMouseOver={(e) => {
+            e.target.style.transform = 'scale(1.02)';
+            e.target.style.boxShadow = '0 6px 20px rgba(255, 165, 0, 0.4)';
+          }}
+          onMouseOut={(e) => {
+            e.target.style.transform = 'scale(1)';
+            e.target.style.boxShadow = '0 4px 15px rgba(255, 165, 0, 0.3)';
+          }}>
+            <Search size={24} />
+            Rechercher
+          </button>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default Home;
 
   const handleSearch = () => {
     // La recherche est déjà gérée par useEffect

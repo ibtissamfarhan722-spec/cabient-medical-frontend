@@ -5,6 +5,7 @@ import EspacePatient from './EspacePatient/EspacePatient';
 import EspaceSecretaire from './EspaceSecretaire/EspaceSecretaire';
 import EspaceAdmin from './EspaceAdmin/EspaceAdmin';
 import axios from 'axios';
+
 // Config globale Axios
 axios.defaults.headers.common['Accept'] = 'application/json';
 
